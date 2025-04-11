@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SmartCare Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <h1>SmartCare</h1>
+                </div>
+                <h2>Create an Account</h2>
+                <p>Join SmartCare to streamline your healthcare experience</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="doctor">Doctor</button>
+                <button class="tab-btn" data-tab="patient">Patient</button>
+            </div>
+            
+            <div class="tab-content active" id="doctor-tab">
+                <form id="doctor-register-form" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="doctor-first-name">First Name</label>
+                            <input type="text" id="doctor-first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-last-name">Last Name</label>
+                            <input type="text" id="doctor-last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doctor-email">Email</label>
+                        <input type="email" id="doctor-email" placeholder="doctor@clinic.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doctor-specialty">Specialty</label>
+                        <select id="doctor-specialty" required>
+                            <option value="" disabled selected>Select your specialty</option>
+                            <option value="general">General Practice</option>
+                            <option value="internal">Internal Medicine</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doctor-password">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="doctor-password" placeholder="••••••••" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doctor-confirm-password">Confirm Password</label>
+                        <div class="password-input">
+                            <input type="password" id="doctor-confirm-password" placeholder="••••••••" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group terms">
+                        <input type="checkbox" id="doctor-terms" required>
+                        <label for="doctor-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="patient-tab">
+                <form id="patient-register-form" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patient-first-name">First Name</label>
+                            <input type="text" id="patient-first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-last-name">Last Name</label>
+                            <input type="text" id="patient-last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-email">Email</label>
+                        <input type="email" id="patient-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-dob">Date of Birth</label>
+                        <input type="date" id="patient-dob" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-password">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="patient-password" placeholder="••••••••" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-confirm-password">Confirm Password</label>
+                        <div class="password-input">
+                            <input type="password" id="patient-confirm-password" placeholder="••••••••" required>
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group terms">
+                        <input type="checkbox" id="patient-terms" required>
+                        <label for="patient-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                </form>
+            </div>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

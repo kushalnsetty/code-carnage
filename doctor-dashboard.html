@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - SmartCare Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <h2>SmartCare</h2>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="doctor-dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/doctor-patients.html">
+                            <i class="fas fa-users"></i>
+                            <span>Patients</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/doctor-appointments.html">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="doctor-rounds.html">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Rounds</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="doctor-adr.html">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>ADR Alerts</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="doctor-messages.html">
+                            <i class="fas fa-comment-alt"></i>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="img/doctor-avatar.jpg" alt="Dr. Neha" class="avatar">
+                    <div class="user-details">
+                        <h4>Dr. Neha</h4>
+                        <p>General Practitioner</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="doctor-profile.html">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                        <a href="doctor-settings.html">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <a href="index.html">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Doctor Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search patients...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="voice-btn" id="voice-btn">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <div class="notification-dropdown">
+                            <div class="notification-header">
+                                <h3>Notifications</h3>
+                                <a href="#">Mark all as read</a>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon alert">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p><strong>ADR Alert:</strong> Michael Chen showing signs of adverse reaction to Furosemide</p>
+                                        <span class="notification-time">10 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>New patient record created: Emily Rodriguez</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Appointment reminder: Sarah Johnson at 2:30 PM</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="doctor-notifications.html">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="dashboard-content">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-card-content">
+                            <h3>Total Patients</h3>
+                            <p class="stat-number">127</p>
+                            <p class="stat-change positive">+3 this week</p>
+                        </div>
+                        <div class="stat-card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-content">
+                            <h3>Today's Appointments</h3>
+                            <p class="stat-number">8</p>
+                            <p class="stat-change">2 remaining</p>
+                        </div>
+                        <div class="stat-card-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-card-content">
+                            <h3>Pending Tasks</h3>
+                            <p class="stat-number">5</p>
+                            <p class="stat-change">3 high priority</p>
+                        </div>
+                        <div class="stat-card-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card alert">
+                        <div class="stat-card-content">
+                            <h3>ADR Alerts</h3>
+                            <p class="stat-number">3</p>
+                            <p class="stat-change">1 critical</p>
+                        </div>
+                        <div class="stat-card-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card patients-card">
+                        <div class="card-header">
+                            <h2>Recent Patients</h2>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-plus"></i> Add Patient
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="patient-list">
+                                <div class="patient-item">
+                                    <div class="patient-info">
+                                        <img src="img/patient1.jpg" alt="Sarah Johnson" class="avatar">
+                                        <div>
+                                            <h4>Sarah Johnson</h4>
+                                            <p>42 yrs • Hypertension, Diabetes</p>
+                                        </div>
+                                    </div>
+                                    <div class="patient-actions">
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="patient-item alert">
+                                    <div class="patient-info">
+                                        <img src="img/patient2.jpg" alt="Michael Chen" class="avatar">
+                                        <div>
+                                            <h4>Michael Chen</h4>
+                                            <p>65 yrs • COPD, Heart Failure</p>
+                                        </div>
+                                    </div>
+                                    <div class="patient-actions">
+                                        <span class="alert-badge">2</span>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="patient-item">
+                                    <div class="patient-info">
+                                        <img src="img/patient3.jpg" alt="Emily Rodriguez" class="avatar">
+                                        <div>
+                                            <h4>Emily Rodriguez</h4>
+                                            <p>35 yrs • Asthma, Anxiety</p>
+                                        </div>
+                                    </div>
+                                    <div class="patient-actions">
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="patient-item alert">
+                                    <div class="patient-info">
+                                        <img src="img/patient4.jpg" alt="Robert Williams" class="avatar">
+                                        <div>
+                                            <h4>Robert Williams</h4>
+                                            <p>58 yrs • Arthritis, Hypertension</p>
+                                        </div>
+                                    </div>
+                                    <div class="patient-actions">
+                                        <span class="alert-badge">1</span>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="patient-item">
+                                    <div class="patient-info">
+                                        <img src="img/patient5.jpg" alt="Aisha Patel" class="avatar">
+                                        <div>
+                                            <h4>Aisha Patel</h4>
+                                            <p>29 yrs • Migraine, Depression</p>
+                                        </div>
+                                    </div>
+                                    <div class="patient-actions">
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline btn-block">View All Patients</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card appointments-card">
+                        <div class="card-header">
+                            <h2>Today's Appointments</h2>
+                            <span class="subtitle">4 appointments scheduled</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="appointment-list">
+                                <div class="appointment-item">
+                                    <div class="appointment-info">
+                                        <h4>Michael Chen</h4>
+                                        <div class="appointment-details">
+                                            <span><i class="fas fa-clock"></i> 10:30 AM</span>
+                                            <span><i class="fas fa-circle"></i> Follow-up</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Start</button>
+                                </div>
+                                
+                                <div class="appointment-item">
+                                    <div class="appointment-info">
+                                        <h4>Lisa Thompson</h4>
+                                        <div class="appointment-details">
+                                            <span><i class="fas fa-clock"></i> 11:15 AM</span>
+                                            <span><i class="fas fa-circle"></i> New Patient</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Start</button>
+                                </div>
+                                
+                                <div class="appointment-item">
+                                    <div class="appointment-info">
+                                        <h4>James Wilson</h4>
+                                        <div class="appointment-details">
+                                            <span><i class="fas fa-clock"></i> 1:00 PM</span>
+                                            <span><i class="fas fa-circle"></i> Medication Review</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Start</button>
+                                </div>
+                                
+                                <div class="appointment-item">
+                                    <div class="appointment-info">
+                                        <h4>Sophia Garcia</h4>
+                                        <div class="appointment-details">
+                                            <span><i class="fas fa-clock"></i> 2:30 PM</span>
+                                            <span><i class="fas fa-circle"></i> Follow-up</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Start</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline btn-block">View Calendar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card adr-card">
+                    <div class="card-header">
+                        <h2>Recent ADR Alerts</h2>
+                        <span class="subtitle">Potential adverse drug reactions</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="adr-list">
+                            <div class="adr-item critical">
+                                <div class="adr-severity">
+                                    <span class="severity-indicator"></span>
+                                    <span>Critical</span>
+                                </div>
+                                <div class="adr-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Possible adverse reaction to Furosemide - increased fatigue and dizziness</p>
+                                    <div class="adr-meta">
+                                        <span><i class="fas fa-calendar"></i> Today, 9:45 AM</span>
+                                        <span><i class="fas fa-pills"></i> Medication: Furosemide 40mg</span>
+                                    </div>
+                                </div>
+                                <div class="adr-actions">
+                                    <button class="btn btn-outline btn-sm">Review</button>
+                                </div>
+                            </div>
+                            
+                            <div class="adr-item high">
+                                <div class="adr-severity">
+                                    <span class="severity-indicator"></span>
+                                    <span>High</span>
+                                </div>
+                                <div class="adr-info">
+                                    <h4>Robert Williams</h4>
+                                    <p>Potential interaction between Lisinopril and new NSAID prescription</p>
+                                    <div class="adr-meta">
+                                        <span><i class="fas fa-calendar"></i> Yesterday, 3:20 PM</span>
+                                        <span><i class="fas fa-pills"></i> Medications: Lisinopril 10mg, Ibuprofen 600mg</span>
+                                    </div>
+                                </div>
+                                <div class="adr-actions">
+                                    <button class="btn btn-outline btn-sm">Review</button>
+                                </div>
+                            </div>
+                            
+                            <div class="adr-item medium">
+                                <div class="adr-severity">
+                                    <span class="severity-indicator"></span>
+                                    <span>Medium</span>
+                                </div>
+                                <div class="adr-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Reported dry cough after starting Lisinopril - potential ACE inhibitor side effect</p>
+                                    <div class="adr-meta">
+                                        <span><i class="fas fa-calendar"></i> 2 days ago</span>
+                                        <span><i class="fas fa-pills"></i> Medication: Lisinopril 10mg</span>
+                                    </div>
+                                </div>
+                                <div class="adr-actions">
+                                    <button class="btn btn-outline btn-sm">Review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline btn-block">View All Alerts</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="voice-recording-modal" id="voice-modal">
+        <div class="voice-modal-content">
+            <div class="voice-modal-header">
+                <h3>Voice Recording</h3>
+                <button class="close-modal" id="close-voice-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="voice-modal-body">
+                <div class="recording-indicator">
+                    <div class="recording-animation"></div>
+                    <p>Listening...</p>
+                </div>
+                <div class="recording-text">
+                    <p id="recording-transcript">Speak now to record patient notes...</p>
+                </div>
+            </div>
+            <div class="voice-modal-footer">
+                <button class="btn btn-outline" id="cancel-recording">Cancel</button>
+                <button class="btn btn-primary" id="save-recording">Save Notes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

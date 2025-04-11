@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Record - SmartCare Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/patient-record.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <h2>SmartCare</h2>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="doctor-dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="doctor-patients.html">
+                            <i class="fas fa-users"></i>
+                            <span>Patients</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="doctor-appointments.html">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Appointments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="doctor-rounds.html">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Rounds</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="doctor-adr.html">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>ADR Alerts</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="doctor-messages.html">
+                            <i class="fas fa-comment-alt"></i>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="img/doctor-avatar.jpg" alt="Dr. Neha" class="avatar">
+                    <div class="user-details">
+                        <h4>Dr. Neha</h4>
+                        <p>General Practitioner</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="doctor-profile.html">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                        <a href="doctor-settings.html">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <a href="index.html">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <a href="doctor-patients.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1>Patient Record</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-calendar-plus"></i> Schedule Follow-up
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </header>
+            
+            <div class="dashboard-content">
+                <div class="patient-record-grid">
+                    <div class="patient-info-card">
+                        <div class="patient-header">
+                            <div class="patient-avatar-info">
+                                <img src="img/patient2.jpg" alt="Michael Chen" class="avatar large">
+                                <div>
+                                    <h2>Michael Chen</h2>
+                                    <p>65 yrs • Male</p>
+                                </div>
+                            </div>
+                            <div class="patient-alert-badge">
+                                <span class="badge alert">2 Alerts</span>
+                            </div>
+                        </div>
+                        
+                        <div class="patient-details">
+                            <div class="detail-section">
+                                <h3>Patient Information</h3>
+                                <div class="detail-grid">
+                                    <div class="detail-label">DOB:</div>
+                                    <div class="detail-value">05/12/1960</div>
+                                    
+                                    <div class="detail-label">Phone:</div>
+                                    <div class="detail-value">(555) 123-4567</div>
+                                    
+                                    <div class="detail-label">Email:</div>
+                                    <div class="detail-value">michael.chen@example.com</div>
+                                    
+                                    <div class="detail-label">Address:</div>
+                                    <div class="detail-value">123 Main St, Anytown, CA 94321</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-section">
+                                <h3>Medical Conditions</h3>
+                                <p>COPD, Heart Failure</p>
+                            </div>
+                            
+                            <div class="detail-section">
+                                <h3>Allergies</h3>
+                                <div class="tags">
+                                    <span class="tag alert">Penicillin</span>
+                                    <span class="tag alert">Sulfa drugs</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="patient-alerts">
+                            <h3>Alerts</h3>
+                            <div class="alert-list">
+                                <div class="alert-item critical">
+                                    <div class="alert-header">
+                                        <span class="alert-type">ADR</span>
+                                        <span class="alert-date">04/09/2023</span>
+                                    </div>
+                                    <p class="alert-description">Possible adverse reaction to Furosemide - increased fatigue and dizziness</p>
+                                </div>
+                                
+                                <div class="alert-item warning">
+                                    <div class="alert-header">
+                                        <span class="alert-type">Symptom</span>
+                                        <span class="alert-date">04/08/2023</span>
+                                    </div>
+                                    <p class="alert-description">Worsening shortness of breath over past week</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="patient-tabs-container">
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="visit">Current Visit</button>
+                            <button class="tab-btn" data-tab="medications">Medications</button>
+                            <button class="tab-btn" data-tab="vitals">Vitals</button>
+                            <button class="tab-btn" data-tab="history">History</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="visit-tab">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h2>Visit Notes</h2>
+                                    <div class="visit-date">
+                                        <i class="fas fa-clock"></i>
+                                        <span id="current-date-time">Today, 10:30 AM</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-content">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="chief-complaint">Chief Complaint</label>
+                                            <input type="text" id="chief-complaint" placeholder="Enter chief complaint">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="visit-type">Visit Type</label>
+                                            <select id="visit-type">
+                                                <option value="new">New Patient</option>
+                                                <option value="follow-up" selected>Follow-up</option>
+                                                <option value="urgent">Urgent Care</option>
+                                                <option value="medication">Medication Review</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="label-with-action">
+                                            <label for="clinical-notes">Clinical Notes</label>
+                                            <button class="btn btn-sm btn-outline" id="voice-notes-btn">
+                                                <i class="fas fa-microphone"></i> Voice to Text
+                                            </button>
+                                        </div>
+                                        <textarea id="clinical-notes" placeholder="Enter clinical notes or use voice to text..." rows="5"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Vitals</label>
+                                        <div class="vitals-grid">
+                                            <div class="vital-input">
+                                                <label for="bp">Blood Pressure</label>
+                                                <input type="text" id="bp" placeholder="120/80">
+                                            </div>
+                                            
+                                            <div class="vital-input">
+                                                <label for="pulse">Pulse</label>
+                                                <input type="text" id="pulse" placeholder="72">
+                                            </div>
+                                            
+                                            <div class="vital-input">
+                                                <label for="temp">Temperature</label>
+                                                <input type="text" id="temp" placeholder="98.6">
+                                            </div>
+                                            
+                                            <div class="vital-input">
+                                                <label for="resp">Resp. Rate</label>
+                                                <input type="text" id="resp" placeholder="16">
+                                            </div>
+                                            
+                                            <div class="vital-input">
+                                                <label for="o2">O2 Sat</label>
+                                                <input type="text" id="o2" placeholder="98%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="label-with-action">
+                                            <label>Prescriptions</label>
+                                            <button class="btn btn-sm btn-outline">
+                                                <i class="fas fa-plus"></i> Add Prescription
+                                            </button>
+                                        </div>
+                                        <div class="empty-state">
+                                            <p>No prescriptions added for this visit</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-footer">
+                                    <div class="button-group">
+                                        <button class="btn btn-outline">Cancel</button>
+                                        <button class="btn btn-primary">Save Visit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="medications-tab">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h2>Current Medications</h2>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-plus"></i> Add Medication
+                                    </button>
+                                </div>
+                                
+                                <div class="card-content">
+                                    <div class="medications-list">
+                                        <div class="medication-item">
+                                            <div class="medication-info">
+                                                <h3>Lisinopril</h3>
+                                                <p>10mg • Once daily • Started 01/15/2023</p>
+                                            </div>
+                                            <div class="medication-actions">
+                                                <button class="btn btn-sm btn-outline">Edit</button>
+                                                <button class="btn btn-sm btn-outline">Stop</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="medication-item alert">
+                                            <div class="medication-info">
+                                                <h3>Furosemide</h3>
+                                                <p>40mg • Twice daily • Started 02/10/2023</p>
+                                            </div>
+                                            <div class="medication-actions">
+                                                <button class="btn btn-sm btn-outline">Edit</button>
+                                                <button class="btn btn-sm btn-outline">Stop</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="medication-item">
+                                            <div class="medication-info">
+                                                <h3>Metoprolol</h3>
+                                                <p>25mg • Twice daily • Started 03/05/2023</p>
+                                            </div>
+                                            <div class="medication-actions">
+                                                <button class="btn btn-sm btn-outline">Edit</button>
+                                                <button class="btn btn-sm btn-outline">Stop</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="vitals-tab">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h2>Vitals History</h2>
+                                </div>
+                                
+                                <div class="card-content">
+                                    <div class="vitals-table-container">
+                                        <table class="vitals-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>BP</th>
+                                                    <th>Pulse</th>
+                                                    <th>Temp</th>
+                                                    <th>Resp Rate</th>
+                                                    <th>O2 Sat</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>04/10/2023</td>
+                                                    <td>138/85</td>
+                                                    <td>78</td>
+                                                    <td>98.6</td>
+                                                    <td>18</td>
+                                                    <td>95%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>03/15/2023</td>
+                                                    <td>142/88</td>
+                                                    <td>82</td>
+                                                    <td>98.4</td>
+                                                    <td>20</td>
+                                                    <td>94%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>02/20/2023</td>
+                                                    <td>145/90</td>
+                                                    <td>85</td>
+                                                    <td>98.8</td>
+                                                    <td>22</td>
+                                                    <td>93%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="vitals-chart">
+                                        <h3>Blood Pressure Trend</h3>
+                                        <div class="chart-container">
+                                            <canvas id="bp-chart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="history-tab">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h2>Visit History</h2>
+                                </div>
+                                
+                                <div class="card-content">
+                                    <div class="visit-history-list">
+                                        <div class="visit-history-item">
+                                            <div class="visit-history-info">
+                                                <div class="visit-icon">
+                                                    <i class="fas fa-file-medical"></i>
+                                                </div>
+                                                <div>
+                                                    <h3>Visit - 03/10/2023</h3>
+                                                    <p>Follow-up appointment</p>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline">View Details</button>
+                                        </div>
+                                        
+                                        <div class="visit-history-item">
+                                            <div class="visit-history-info">
+                                                <div class="visit-icon">
+                                                    <i class="fas fa-file-medical"></i>
+                                                </div>
+                                                <div>
+                                                    <h3>Visit - 02/15/2023</h3>
+                                                    <p>Medication review</p>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline">View Details</button>
+                                        </div>
+                                        
+                                        <div class="visit-history-item">
+                                            <div class="visit-history-info">
+                                                <div class="visit-icon">
+                                                    <i class="fas fa-file-medical"></i>
+                                                </div>
+                                                <div>
+                                                    <h3>Visit - 01/20/2023</h3>
+                                                    <p>Follow-up appointment</p>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-footer">
+                                    <button class="btn btn-outline btn-block">
+                                        <i class="fas fa-chevron-down"></i> Load More
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="voice-recording-modal" id="voice-modal">
+        <div class="voice-modal-content">
+            <div class="voice-modal-header">
+                <h3>Voice Recording</h3>
+                <button class="close-modal" id="close-voice-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="voice-modal-body">
+                <div class="recording-indicator">
+                    <div class="recording-animation"></div>
+                    <p>Listening...</p>
+                </div>
+                <div class="recording-text">
+                    <p id="recording-transcript">Speak now to record patient notes...</p>
+                </div>
+            </div>
+            <div class="voice-modal-footer">
+                <button class="btn btn-outline" id="cancel-recording">Cancel</button>
+                <button class="btn btn-primary" id="save-recording">Save Notes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/patient-record.js"></script>
+</body>
+</html>
